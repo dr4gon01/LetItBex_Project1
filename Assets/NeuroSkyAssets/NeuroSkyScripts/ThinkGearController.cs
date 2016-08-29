@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections;
 
 public class ThinkGearController : MonoBehaviour {
+
+
 	
 	public delegate void UpdateIntValueDelegate(int value);
 	public delegate void UpdateFloatValueDelegate(float value);
@@ -28,7 +30,8 @@ public class ThinkGearController : MonoBehaviour {
 	private bool sendEEGEnable = false;
 	private bool sendESenseEnable = true;
 	private bool sendBlinkEnable = true;
-	
+
+	PlayerMovement1 playerMove;
 	void Awake(){
 		UnityThinkGear.Init(true);
 		InvokeRepeating("CheckUpdateEvent",0.0f,1.0f);
@@ -40,6 +43,7 @@ public class ThinkGearController : MonoBehaviour {
 		sendEEGEnable = UnityThinkGear.GetSendEEGEnable();
 		sendESenseEnable = UnityThinkGear.GetSendESenseEnable();
 		sendBlinkEnable = UnityThinkGear.GetSendBlinkEnable();
+
 	}
 	
 	void CheckUpdateEvent(){
@@ -88,6 +92,7 @@ public class ThinkGearController : MonoBehaviour {
 			sendBlinkEnable = false;
 			UnityThinkGear.SetSendBlinkEnable(false);
 		}
+			
 	}
 	
 	// Update is called once per frame
