@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Audio;
 using System.Collections;
 
 public class PlayerMovement1 : MonoBehaviour{
@@ -6,10 +7,11 @@ public class PlayerMovement1 : MonoBehaviour{
 	private Vector3 _startPosition;
 	ThinkGearController controller;
 	private int Attention;
-	public int Meditation;
+	private int Meditation;
 	private bool noAttention;
 	private bool isTouch;
 	AudioSource audi;
+	public AudioMixer audioMix;
 	public GameObject enemy;
 
 
@@ -17,15 +19,14 @@ public class PlayerMovement1 : MonoBehaviour{
 
 	// Use this for initialization
 	void Start () {
-
 		isTouch = false;
-
 		_startPosition = this.transform.position;
 		controller = GameObject.Find ("ThinkGear").GetComponent<ThinkGearController> ();
 		controller.UpdateAttentionEvent += OnUpdateAttention;
 		controller.UpdateMeditationEvent += OnUpdateMeditation;
 		noAttention = false;
-		audi = GetComponent <AudioSource> ();
+		audioMix = GetComponent<AudioMixer>();
+		audi= GetComponent<AudioSource>();
 	}
 
 	void OnUpdateAttention(int value){
@@ -56,9 +57,10 @@ public class PlayerMovement1 : MonoBehaviour{
 		//1. on trigger stop the player & start considering the meditation level
 		
 
-		if (other.tag == "enemy" ) {
+		if (other.tag == "enemy") {
+			audioMix.SetFloat ("Volume", 1.0f);
 			isTouch = true;
-			}
+		}
 	}
 		
 
