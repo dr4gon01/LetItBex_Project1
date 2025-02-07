@@ -1,3 +1,40 @@
+# NeuroSky MindWave Horror Game
+
+**Presented at:** IEEE Brain Conference, San Diego, 2016
+
+### Design & Development : Nirmesh Gollamandala & Srinivas Varshith Palagiri
+
+## Overview
+
+This pioneering project integrates Brain-Computer Interface (BCI) technology with interactive gaming to create an immersive soundscape horror experience. Using the NeuroSky MindWave™ headset, our game reads the player's mental state—specifically, their Attention and Meditation levels—via NeuroSky's proprietary eSense™ algorithms and raw brainwave data. The result is an innovative control mechanism that directly ties the player's mental state to the in-game experience.
+
+## The Game
+
+Developed in C# using Unity, this horror genre game was designed for both Android and iOS platforms. The core gameplay mechanic revolves around the player's ability to outrun a ghost:
+- **Dynamic Movement Control:**  
+  The player's speed is determined by their level of relaxation (Meditation). The more relaxed the player is, the faster they can move, adding a unique, neurofeedback-driven twist to the traditional chase scenario.
+
+## Technical Integration
+
+- **Brain-Computer Interface:**  
+  The NeuroSky MindWave™ headset reports real-time mental state data, including attention and meditation metrics, which are then used to influence gameplay.
+  
+- **Unity Plugin for Mobile Platforms:**  
+  A custom Unity plugin was developed to facilitate communication between the game and the NeuroSky MindWave device. Key technical components include:
+  
+  - **Eclipse Project:**  
+    The folder `UnityThinkGear2User4Android` contains an Eclipse project that generates `UnityThinkGear.jar`, essential for Android integration.
+  
+  - **Cross-Platform Support:**  
+    The solution is packaged as **NeuroSkyUnityThinkGear For iOS & Android Version 1.1.2**, ensuring seamless support for both mobile operating systems.
+
+## Significance
+
+This project represents an early exploration into the fusion of neurofeedback and gaming. By harnessing the player's mental state to influence game mechanics, it offers a glimpse into the future of interactive entertainment—one where the boundaries between mind and machine blur to create deeply personalized user experiences.
+
+Whether you're interested in BCI, immersive game design, or the integration of cutting-edge technology into interactive media, this project serves as a compelling case study of innovation at the crossroads of neuroscience and gaming.
+
+
 # NeuroSkyUnityThinkGearPlugins
 A plugins for Unity to create Android and iOS app and communicate with NeuroSky MindWave Device
 
